@@ -1,0 +1,47 @@
+<nav id="sidebar" class="active">
+    <!-- Sidebar Header -->
+    <div class="sidebar-header">
+        <h3 class="site-brand flex-row">Zelda Heart Tracker</h3>
+        <h2 class="site-brand">ZHT</h2>
+    </div>
+
+    <!-- Sidebar Links -->
+    <ul class="list-unstyled components">
+        <li ui-sref-active="active">
+            <a href ui-sref="home" aria-expanded="false">
+                <i class="fas fa-home"></i>
+                Home
+            </a>
+        </li>
+        <li ui-sref-active="active">
+            <a href ui-sref="games.list">
+                <i class="fas fa-gamepad"></i>
+                Games
+            </a>
+            <!-- <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+                <i class="glyphicon glyphicon-duplicate"></i>
+                Pages
+            </a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li><a href="#">Page 1</a></li>
+                <li><a href="#">Page 2</a></li>
+                <li><a href="#">Page 3</a></li>
+            </ul> -->
+        </li>
+        <li ui-sref-active="active">
+            <a href ui-sref="systems.list">
+                <i class="fab fa-nintendo-switch"></i>
+                Systems
+            </a>
+        </li>
+        <li ui-sref-active="active">
+            <a href ui-sref="myGames.list">
+                <i class="fas fa-trophy"></i>
+                My Games
+            </a>
+        </li>
+    </ul>
+</nav>
+<button class="btn toggle-arrow-btn sidebar-collapse">
+    <i class="toggle-arrow fas fa-arrow-left fa-lg"></i>
+</button>

@@ -1,0 +1,17 @@
+<div class="col-xs-12">
+	<h2 class="site-brand">My Games</h2>
+	<div class="divider"></div>
+</div>
+<div class="row">
+	<div ng-repeat="game in myGames.gamelist.games" class="col-xs-12 col-md-3">
+		<div class="panel panel-default game-panel hoverable" 
+			ui-sref="myGames.profiles({id: game.id})">
+			<img class="img-responsive" 
+				ng-src="{{game.display_image_url}}" 
+				class="img-rounded">
+			<div class="panel-body">
+			  	{{game.name}}
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,29 @@
+<div class="menu-bar">
+	<div class="menu-item sidebar-collapse menu-link">
+		<i class="fas fa-bars fa-2x"></i>
+	</div>
+
+	<div class="menu-item search-bar">
+		<form name="search-form">
+			<i class="fas fa-search fa-lg"></i>
+			<input type="text" name="search-form.text" placeholder="Enter Search Here">
+		</form>
+	</div>
+	<div class="menu-item menu-link" uib-dropdown>
+		<div uib-dropdown-toggle ng-if="menu.hasCurrent()">	
+			{{menu.current.username}}<i class="fas fa-caret-down"></i>
+		</div>
+		<ul class="dropdown-menu dropdown-menu-right" 
+			uib-dropdown-menu 
+			role="menu" 
+			aria-labelledby="single-button"
+			ng-if="menu.hasCurrent()">
+	        <li role="menuitem"><a href="#">Account</a></li>
+	        <li class="divider"></li>
+	        <li role="menuitem"><a href ng-click="menu.logout()">Logout</a></li>
+      	</ul>
+      	<div ng-if="!menu.hasCurrent()">	
+			<a href ui-sref="login.form">Log In</a>
+		</div>
+	</div>
+</div>

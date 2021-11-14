@@ -1,0 +1,7 @@
+.collectibles-row {
+	div[uib-accordion-group].collected {
+		.panel-heading {
+			text-decoration: line-through;
+		}
+	}
+}

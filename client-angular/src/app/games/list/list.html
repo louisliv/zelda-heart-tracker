@@ -1,0 +1,29 @@
+<div class="col-xs-12">
+	<h2 class="site-brand">Games</h2>
+	<div class="divider"></div>
+</div>
+<div class="row">
+	<div ng-repeat="game in ctrl.games" class="col-xs-12 col-md-3 games-list">
+		<div class="panel panel-default game-panel">
+			<img class="img-responsive" 
+				ng-src="{{game.display_image_url}}" 
+				class="img-rounded">
+			<div class="panel-body">
+			  	{{game.name}}
+			</div>
+			<overlay ng-click="ctrl.addToList(game)" 
+				ng-if="!ctrl.gameInList(game)">
+				<div>
+					<i class="fas fa-plus fa-5x"></i>
+					<h3>Add To My Games</h3>
+				</div>
+			</overlay>
+			<span class="fas fa-check fa-lg in-list-icon" 
+				ng-if="ctrl.gameInList(game)"
+				tooltip-placement="top"
+				tooltip-append-to-body="true" 
+				uib-tooltip="Already in My Games">
+			</span>
+		</div>
+	</div>
+</div>

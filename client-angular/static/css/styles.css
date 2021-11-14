@@ -1,0 +1,356 @@
+/* RGB */
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+.cursive {
+  font-family: "Kavivanar", cursive; }
+
+.green-text {
+  color: #4aba91; }
+
+@font-face {
+  font-family: 'Zelda';
+  src: url("/fonts/botw/botw.woff") format("woff"), url("/fonts/botw/botw.ttf") format("truetype"); }
+
+.site-brand {
+  font-family: 'Zelda', serif; }
+
+.wrapper {
+  display: flex;
+  width: 100%; }
+
+body {
+  font-family: 'Poppins', sans-serif; }
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1.7em;
+  color: #999; }
+
+a, a:hover, a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s; }
+
+#content {
+  transition: all 0.3s;
+  flex: 1;
+  width: 50%;
+  margin-left: 250px; }
+
+.container {
+  width: 100%; }
+
+#content.collapsed {
+  margin-left: 80px; }
+
+.hidden-md-up {
+  display: none; }
+
+@media (max-width: 768px) {
+  #content {
+    margin-left: 0px; }
+  #content.collapsed {
+    margin-left: 0px; }
+  .hidden-md-up {
+    display: inline-block; }
+  .hide-content {
+    overflow: hidden; } }
+
+.flex-row {
+  display: flex; }
+
+.flex-fill {
+  flex: 1; }
+
+.flex-v-center {
+  align-items: center; }
+
+.flex-h-center {
+  justify-content: center; }
+
+.divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5; }
+
+.panel {
+  position: relative; }
+
+.game-panel .panel-body {
+  height: 70px;
+  overflow: hidden; }
+
+.hoverable {
+  cursor: pointer; }
+
+.panel {
+  border-radius: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s; }
+  .panel.hoverable:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+  .panel a[aria-expanded="true"] {
+    color: inherit;
+    background: transparent; }
+
+uib-accordion .panel-group {
+  margin-bottom: 0px; }
+  uib-accordion .panel-group .panel {
+    margin-bottom: 0;
+    border-radius: 0px; }
+
+.modal-content {
+  border-radius: 0px; }
+  .modal-content .modal-header {
+    background-color: #0d9263;
+    color: #d4ce46; }
+
+.btn-green {
+  background-color: #4aba91;
+  color: #d4ce46; }
+
+.strikethrough-text {
+  text-decoration: line-through !important; }
+
+.dropdown-menu {
+  border-radius: 0px; }
+
+.menu-bar {
+  display: flex;
+  border-bottom: 1px solid #D3D3D3;
+  height: 50px;
+  align-items: center; }
+  .menu-bar .menu-item {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: 1px solid #D3D3D3;
+    height: 100%; }
+    .menu-bar .menu-item .fa {
+      color: #D3D3D3; }
+    .menu-bar .menu-item input {
+      background: transparent;
+      border: none;
+      margin-left: 5px; }
+    .menu-bar .menu-item input:focus {
+      background: transparent;
+      outline: none; }
+    .menu-bar .menu-item [uib-dropdown-toggle] i {
+      margin-left: 5px; }
+  .menu-bar .menu-item.search-bar {
+    flex: 1; }
+  .menu-bar .menu-link:hover {
+    cursor: pointer; }
+
+@media (max-width: 768px) {
+  .menu-bar {
+    background: #0d9263;
+    color: #d4ce46; }
+    .menu-bar ::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #d4ce46;
+      opacity: 1;
+      /* Firefox */ }
+    .menu-bar :-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #d4ce46; }
+    .menu-bar ::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: #d4ce46; }
+    .menu-bar .menu-item {
+      border-right: 1px solid #4aba91; } }
+
+overlay {
+  height: 100%;
+  width: 100%; }
+  overlay .overlay {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; }
+  overlay .overlay:hover {
+    opacity: 1;
+    background: rgba(70, 70, 70, 0.8); }
+
+/*********************************************
+Nav Overrides
+/********************************************/
+/* Shrinking the sidebar from 250px to 80px and center aligining its content*/
+#sidebar.active {
+  min-width: 80px;
+  max-width: 80px;
+  text-align: center; }
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  height: 100vh;
+  background: #0d9263;
+  color: #d4ce46;
+  position: fixed; }
+  #sidebar .components {
+    transition: all 0.3s; }
+
+.toggle-arrow-btn {
+  display: none; }
+
+#sidebar.active .sidebar-wrapper {
+  width: 80px; }
+
+.sidebar-wrapper {
+  position: fixed;
+  z-index: 2;
+  width: 250px; }
+
+#sidebar .sidebar-header {
+  padding: 20px; }
+
+#sidebar ul.components {
+  padding: 0 0; }
+
+#sidebar ul p {
+  color: #fff;
+  padding: 10px; }
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block; }
+
+#sidebar ul li a:hover {
+  color: #fff;
+  background: #4aba91; }
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+  color: #fff;
+  background: #4aba91; }
+
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #4aba91; }
+
+/* Toggling the sidebar header content, hide the big heading [h3] and showing the small heading [h2] and vice versa*/
+#sidebar .sidebar-header h2 {
+  display: none; }
+
+#sidebar.active .sidebar-header h3 {
+  display: none; }
+
+#sidebar.active .sidebar-header h2 {
+  display: block; }
+
+#sidebar ul li a {
+  text-align: left; }
+
+#sidebar.active ul li a {
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 0.85em; }
+
+#sidebar.active ul li a i {
+  margin-right: 0;
+  display: block;
+  font-size: 1.8em;
+  margin-bottom: 5px; }
+
+/* Same dropdown links padding*/
+#sidebar.active ul ul a {
+  padding: 10px !important; }
+
+/* Changing the arrow position to bottom center position, 
+   translateX(50%) works with right: 50% 
+   to accurately  center the arrow */
+#sidebar.active a[aria-expanded="false"]::before, #sidebar.active a[aria-expanded="true"]::before {
+  top: auto;
+  bottom: 5px;
+  right: 50%;
+  transform: translateX(50%); }
+
+.mCustomScrollBox:focus {
+  outline: none; }
+
+.mCSB_container:focus {
+  outline: none; }
+
+@media (max-width: 768px) {
+  /* 80px and its content aligned to centre. Pushing it off the screen with the
+       negative left margin
+    */
+  #sidebar.active {
+    min-width: 80px;
+    max-width: 80px;
+    text-align: center;
+    margin-left: -80px !important; }
+  .toggle-arrow-btn.active {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 250px;
+    background: #4aba91;
+    color: #d4ce46;
+    border-radius: 0px;
+    box-shadow: none; }
+  /* Reappearing the sidebar on toggle button click */
+  #sidebar {
+    margin-left: 0;
+    position: fixed;
+    z-index: 2; }
+  /* Toggling the sidebar header content, 
+       hide the big heading [h3] and showing the small heading [h2] and vice versa
+    */
+  #sidebar .sidebar-header h2 {
+    display: none; }
+  #sidebar.active .sidebar-header h3 {
+    display: none; }
+  #sidebar.active .sidebar-header h2 {
+    display: block; }
+  /* Downsize the navigation links font size */
+  #sidebar.active ul li a {
+    padding: 20px 10px;
+    font-size: 0.85em; }
+  #sidebar.active ul li a i {
+    margin-right: 0;
+    display: block;
+    font-size: 1.8em;
+    margin-bottom: 5px; }
+  /* Adjust the dropdown links padding*/
+  #sidebar.active ul ul a {
+    padding: 10px !important; }
+  /* Changing the arrow position to bottom center position, 
+      translateX(50%) works with right: 50% 
+      to accurately  center the arrow */
+  #sidebar.active a[aria-expanded="false"]::before, #sidebar.active a[aria-expanded="true"]::before {
+    top: auto;
+    bottom: 5px;
+    right: 50%;
+    transform: translateX(50%); } }
+
+.games-list overlay:hover {
+  cursor: pointer; }
+
+.games-list overlay i {
+  color: #4aba91; }
+
+.games-list .in-list-icon {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  color: green; }
+
+.collectibles-row div[uib-accordion-group].collected .panel-heading {
+  text-decoration: line-through; }

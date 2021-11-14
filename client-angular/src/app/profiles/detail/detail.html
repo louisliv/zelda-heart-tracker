@@ -1,0 +1,33 @@
+<div class="col-xs-12">
+	<div class="flex-row">
+		<h2 class="site-brand">{{ctrl.profile.name}}</h2>
+		<div class="flex-fill"></div>
+		<h2 ng-style="{color: (ctrl.profile.percentage_complete|getPercentageColor)}">
+			{{ctrl.profile.percentage_complete}}%
+		</h2>
+	</div>
+	<div class="divider"></div>
+</div>
+<div class="row collectibles-row">
+	<div class="col-xs-12" ng-repeat="collectible in ctrl.collectibles">
+		<uib-accordion>
+			<div uib-accordion-group 
+				class="panel-default" 
+				is-open="collectible.openPanel"
+				ng-class="{'collected': ctrl.inMyCollectibles(collectible)}">
+		      	<uib-accordion-heading ng-click="ctrl.toggleCollapse(collectible)">
+	        		{{collectible.name}} 
+	        		<i class="pull-right glyphicon" 
+	        			ng-class="{'glyphicon-chevron-down': collectible.openPanel, 'glyphicon-chevron-right': !collectible.openPanel}">
+	        		</i>
+		      	</uib-accordion-heading>
+		      	{{collectible.description}}
+		      	<button class="btn btn-success" 
+		      		ng-click="ctrl.markAsCollected(collectible)"
+		      		ng-if="!ctrl.inMyCollectibles(collectible)">
+		      		Mark As Collected
+		      	</button>
+		    </div>
+		</uib-accordion>
+	</div>
+</div>

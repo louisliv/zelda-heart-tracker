@@ -1,0 +1,64 @@
+[
+    {
+        "model": "games.manufacturer",
+        "pk": 1,
+        "fields": {
+            "name": "Nintendo",
+            "date_founded": "1989-9-23"
+        }
+    },
+    {
+        "model": "games.manufacturer",
+        "pk": 2,
+        "fields": {
+          "name": "Sony",
+          "date_founded": "1946-5-7"
+        }
+    },
+    {
+        "model": "games.system",
+        "pk": 1,
+        "fields": {
+            "name": "Switch",
+            "manufacturer": 1,
+            "date_released": "2017-3-3",
+	        "abbreviation": "Switch",
+	        "description": "Handheld joy"
+        }
+    },
+    {
+        "model": "games.system",
+        "pk": 2,
+        "fields": {
+            "name": "Playstation",
+            "manufacturer": 2,
+            "date_released": "1994-12-3",
+	        "abbreviation": "PS1",
+	        "description": "Sony's first system."
+        }
+    },
+    {
+        "model": "games.game",
+        "pk": 1,
+        "fields": {
+            "name": "Legend of Zelda: Breath of the Wild",
+            "publisher": "Nintendo",
+	        "date_released": "2017-3-3",
+            "description": "Nintendo's groundbreaking game",
+            "display_image": "/fixtures/botw.jpg",
+	        "system": 1
+        }
+    },
+    {
+        "model": "games.game",
+        "pk": 2,
+        "fields": {
+            "name": "Metal Gear Solid",
+            "publisher": "Konami",
+	        "date_released": "1998-9-3",
+            "description": "Snaaaaaaaaaake!!!!!!",
+            "display_image": "/fixtures/mgs.jpg",
+	        "system": 2
+        }
+    }
+]

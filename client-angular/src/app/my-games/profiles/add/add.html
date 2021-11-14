@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <span class="pull-right fas fa-times" ng-click="modal.dismiss()"></span>
+    <h3 class="modal-title site-brand">Add Profile</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <form name="addForm">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" 
+                class="form-control" 
+                placeholder="Name"
+                name="name"
+                ng-model="modal.newProfile.name">
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" type="button" ng-click="modal.submit()">Submit</button>
+</div>
