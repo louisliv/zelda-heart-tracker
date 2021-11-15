@@ -1,0 +1,17 @@
+@import "./utils/sass/globals.scss";
+@import "~bootstrap/scss/bootstrap";
+@import '~@fortawesome/fontawesome-svg-core/styles.css';
+@import "./navbar/navbar.scss";
+
+.no-padding {
+  padding: 0;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.dark-green-btn {
+  border-radius: 0;
+  color: $white;
+}

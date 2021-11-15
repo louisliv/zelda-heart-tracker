@@ -1,0 +1,16 @@
+.main-navbar {
+    height: 100vh;
+    background-color: $dark-green;
+    padding: 5px;
+    color: $white;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar-header {
+    .navbar-brand {
+        margin-right: 0;
+        color: $dandelion;
+        font-family: "ZeldaFont";
+    }
+}

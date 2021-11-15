@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls import url, include
+from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from rest_framework import routers
@@ -22,7 +23,6 @@ from games.views import (ManufacturerViewSet, SystemViewSet,
     GameViewSet, CollectibleViewSet, GameProfileViewSet,
     GameListViewSet)
 from api.views import AuthViewSet
-from .views import index
 
 router = routers.DefaultRouter()
 router.register(r'manufacturers', ManufacturerViewSet)
@@ -37,3 +37,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(router.urls)),
 ]
+
+if settings.DEBUG:
+    urlpatterns.extend(static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))

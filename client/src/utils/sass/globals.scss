@@ -1,0 +1,29 @@
+/* RGB */
+$dark-green: rgba(13, 146, 99, 1);
+$green: rgba(74, 186, 145, 1);
+$dandelion: rgba(212, 206, 70, 1);
+$moss: rgba(186, 163, 119, 1);
+$white: #ffffff;
+$primary: rgba(13, 146, 99, 1);
+
+$theme-colors: (
+    "primary": $dark-green,
+);
+
+$cursive-font: 'Kavivanar', cursive;
+$regular-font: 'Open Sans', sans-serif;
+
+@font-face {
+    font-family: "ZeldaFont";
+    src: url("/utils/botw_font.otf") format("opentype");
+}
+
+$footer-height: 40px;
+
+.cursive {
+	font-family: $cursive-font;
+}
+
+.green-text {
+	color: $green;
+}

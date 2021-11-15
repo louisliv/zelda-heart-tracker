@@ -48,7 +48,7 @@ class AuthViewSet(viewsets.ViewSet):
 
             if username and password:
                 auth_user = auth.authenticate(username=username, password=password)
-                if user is not None:
+                if auth_user is not None:
                     auth.login(request, auth_user)
                     serialized = UserSerializer(request.user)
                     return Response(serialized.data, status=status.HTTP_200_OK)
