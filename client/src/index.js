@@ -13,6 +13,7 @@ import reportWebVitals from './reportWebVitals';
 import Games from './games/Games';
 import GameDetail from './games/detail/GameDetail';
 import Login from './Login';
+import MyGames from './my-games/MyGames';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,6 +23,7 @@ ReactDOM.render(
           <Route path="" element={<Home />} />
           <Route path="systems" element={<Systems />} />
           <Route path="games" element={<Games />} />
+          <Route path="my-games" element={<MyGames />} />
           <Route path="games/:gameId" element={<GameDetail />} />
           <Route path="login" element={<Login />} />
         </Route>

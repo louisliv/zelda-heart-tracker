@@ -67,13 +67,15 @@ function MainNavbar() {
           }
         </div>
         <div>
-          <NavItem>
-            <FontAwesomeIcon icon={faHome} />
-            { isOpen ? 
-              " Home":
-              <></>
-            }
-          </NavItem>
+          <Link to="/" color="white">
+            <NavItem style={{color: "white"}}>
+              <FontAwesomeIcon icon={faHome} />
+              { isOpen ? 
+                " Home":
+                <></>
+              }
+            </NavItem>
+          </Link>
         </div>
         <div>
           <Link to="games" color="white">
@@ -98,13 +100,15 @@ function MainNavbar() {
           </Link>
         </div>
         <div>
-          <NavItem>
-            <FontAwesomeIcon icon={faDatabase} /> 
-            { isOpen ? 
-              " My Library":
-              <></>
-            }
-          </NavItem>
+          <Link to="my-games" color="white">
+            <NavItem style={{color: "white"}}>
+              <FontAwesomeIcon icon={faDatabase} /> 
+              { isOpen ? 
+                " My Library":
+                <></>
+              }
+            </NavItem>
+          </Link>
         </div>
       </Nav>
       { isLoggedIn ?

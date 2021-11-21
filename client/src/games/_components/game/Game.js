@@ -1,28 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Constants from '../../../utils/constants/Constants';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
 
 import { Link } from "react-router-dom";
 
-// import { MyGameActions } from 'store/my-games';
+import MyGameApi from "../../../api/models/my-games/index";
 
 import {
     Card,
-    Dropdown
+    Button
 } from 'react-bootstrap'
 
 function Game({ game }) {
-    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [myGames, setMyGames] = useState([])
 
-    // const addToLibrary = () => {
-    //     MyGameActions.addGame({id: game.id})
-    // }
+    useEffect(() => {
+        MyGameApi.getAll()
+            .then(response => {
+                setMyGames(response[0].games)
+            })
+    }, [])
 
-    const toggle = (e) => {
-        e.preventDefault()
-        setDropdownOpen(!dropdownOpen)
+    const addToLibrary = (e) => {
+        e.preventDefault();
+        MyGameApi.addGame({id: game.id})
+            .then(response => {
+                console.log(response);
+                setMyGames([...myGames, response])
+            })
+    }
+
+    const inLibrary = (id) => {
+        return myGames.filter((game) => {
+            return game.id === id;
+        }).length > 0
     }
 
     return (
@@ -36,23 +46,17 @@ function Game({ game }) {
                     <div className="flex-row justify-content-between">
                         <Card.Title>{game.name}</Card.Title>
 
-                        <Dropdown isOpen={dropdownOpen} toggle={(e) => toggle(e)}>
-                            <Dropdown.Toggle tag="div"
-                                data-toggle="dropdown"
-                                aria-expanded={dropdownOpen}>
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu right>
-                                <Dropdown.Item>Add Game to Library</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
+                        { inLibrary(game.id) ?
+                            <div>In Library</div>:
+                            <Button onClick={(e) => addToLibrary(e)}>
+                                Add To Library
+                            </Button>
+                        }
 
-                        <div></div>
                     </div>
                 </Card.Body>
             </Card>
         </Link>
-        // <UISref to="games.details" params={{gameId:game.id}}>
-        // </UISref>
     )
 }
 
