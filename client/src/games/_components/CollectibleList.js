@@ -1,21 +1,19 @@
 import React from "react";
 
 import { 
-    ListGroup, 
-    ListGroupItem,
-    FormCheck
+    ListGroup
 } from "react-bootstrap";
+import CollectibleRow from "./CollectibleRow";
 
 function CollectibleList({ collectibles, checkForCompletion, toggleCompletion }) {
     return (
         <ListGroup>
             {collectibles.map(collectible => (
-                <ListGroupItem key={collectible.id}>
-                    <div className="d-flex justify-content-between">
-                        {collectible.name}
-                        <FormCheck checked={checkForCompletion(collectible.id)} onClick={(e) => toggleCompletion(collectible.id)}/>
-                    </div>
-                </ListGroupItem>
+                <CollectibleRow
+                    collectible={collectible}
+                    checkForCompletion={checkForCompletion}
+                    toggleCompletion={toggleCompletion}>
+                </CollectibleRow>
             ))}
         </ListGroup>
     )
